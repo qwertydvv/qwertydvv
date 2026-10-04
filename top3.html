@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Рейтинг сайтов знакомств</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Nunito:wght@700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #f1f5f9;
+      color: #334155;
+    }
+    
+    .rating-header {
+      background-color: #244275;
+    }
+
+    .score-accent {
+      color: #df3859;
+    }
+
+    .btn-orange {
+      background-color: #f5820d;
+      transition: all 0.2s ease;
+    }
+    
+    .btn-orange:hover {
+      background-color: #e07406;
+      box-shadow: 0 4px 12px rgba(245, 130, 13, 0.35);
+      transform: translateY(-1px);
+    }
+
+    .btn-orange:active {
+      transform: translateY(0);
+    }
+
+    /* Ribbon / Discount Badge styling identical to screenshot */
+    .ribbon-badge {
+      background-color: #3b4e78;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    }
+    .ribbon-tag {
+      background-color: #e3344b;
+    }
+
+    .brand-title {
+      font-family: 'Nunito', 'Inter', sans-serif;
+      letter-spacing: -0.02em;
+    }
+  </style>
+</head>
+<body class="min-h-screen py-8 md:py-16 px-3 sm:px-6 flex flex-col items-center justify-start">
+
+  <div class="w-full max-w-5xl">
+    <div class="text-center mb-8">
+      <h1 class="text-2xl sm:text-3xl font-extrabold text-[#1e3a68] mb-2 tracking-tight">
+        Лучшие сайты и боты для знакомств 2026
+      </h1>
+      <p class="text-slate-500 text-sm sm:text-base">
+        Независимый рейтинг надежных платформ для общения, романтических встреч и отношений
+      </p>
+    </div>
+
+    <!-- Rating Table Card -->
+    <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-200/80">
+      
+      <!-- Table Header (Visible on Desktop) -->
+      <div class="hidden lg:grid grid-cols-12 rating-header text-white font-semibold text-sm py-4 px-6 select-none tracking-wide">
+        <div class="col-span-3 text-center">Сайт</div>
+        <div class="col-span-3 text-center">Описание</div>
+        <div class="col-span-2 text-center">Оценка</div>
+        <div class="col-span-2 text-center">Наша оценка</div>
+        <div class="col-span-2 text-center">Переход на сайт</div>
+      </div>
+
+      <!-- Row 1: Lov.chat -->
+      <div class="group relative flex flex-col lg:grid lg:grid-cols-12 items-center px-4 py-6 sm:px-6 lg:py-7 border-b border-slate-200 hover:bg-slate-50/70 transition-colors">
+        
+        <!-- Ribbon Badge (Like the discount tag on screenshot) -->
+        <div class="absolute -bottom-3 left-6 z-10 flex items-center shadow-md rounded-sm overflow-hidden text-[11px] font-bold tracking-wider uppercase text-white">
+          <span class="bg-[#334b75] px-2 py-0.5">СКИДКА</span>
+          <span class="bg-[#de324a] px-1.5 py-0.5">25%</span>
+        </div>
+
+        <!-- Column 1: Site Brand & Logo -->
+        <div class="w-full lg:w-auto lg:col-span-3 flex items-center justify-start sm:justify-center mb-4 lg:mb-0 gap-3">
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-pink-500 to-rose-400 flex items-center justify-center text-white shadow-md flex-shrink-0 group-hover:scale-105 transition-transform">
+            <!-- Modern Heart-Chat SVG Icon -->
+            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </div>
+          <div>
+            <a href="https://dilayto.com/z4GL" target="_blank" rel="noopener noreferrer" class="brand-title text-2xl font-bold text-[#355799] hover:text-[#244275] transition-colors flex items-center gap-1.5">
+              Lov.chat
+            </a>
+            <span class="inline-block text-[11px] font-semibold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200 lg:hidden">
+              ТОП ВЫБОР
+            </span>
+          </div>
+        </div>
+
+        <!-- Column 2: Description -->
+        <div class="w-full lg:col-span-3 text-slate-700 text-sm leading-relaxed mb-4 lg:mb-0 lg:px-4">
+          <span class="font-bold text-slate-900">Быстрые знакомства</span> и общение. Подбор собеседников в один клик и поиск новых знакомств каждый день.
+        </div>
+
+        <!-- Column 3: User Votes Count -->
+        <div class="w-full lg:col-span-2 flex lg:flex-col justify-between items-center lg:justify-center text-slate-800 mb-3 lg:mb-0 lg:text-center border-t lg:border-t-0 pt-3 lg:pt-0 border-slate-100">
+          <span class="text-xs text-slate-400 font-medium lg:hidden">Голоса:</span>
+          <div>
+            <div class="text-xl sm:text-2xl font-bold tracking-tight text-slate-800">62 450</div>
+            <div class="text-xs text-slate-400 font-medium">оценок</div>
+          </div>
+        </div>
+
+        <!-- Column 4: Our Rating Score -->
+        <div class="w-full lg:col-span-2 flex lg:flex-col justify-between items-center lg:justify-center mb-4 lg:mb-0 lg:text-center border-t lg:border-t-0 pt-2 lg:pt-0 border-slate-100">
+          <span class="text-xs text-slate-400 font-medium lg:hidden">Наша оценка:</span>
+          <div>
+            <div class="text-3xl sm:text-4xl font-extrabold score-accent leading-none mb-1">9.8</div>
+            <a href="https://dilayto.com/z4GL" target="_blank" rel="noopener noreferrer" class="text-xs text-[#3b71ca] hover:text-blue-800 hover:underline transition-colors font-medium">
+              Читать обзор
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 5: Action Button & Secondary Link -->
+        <div class="w-full lg:col-span-2 flex flex-col items-center justify-center gap-1.5 mt-2 lg:mt-0">
+          <a href="https://dilayto.com/z4GL" target="_blank" rel="noopener noreferrer" class="btn-orange w-full sm:w-48 lg:w-full py-2.5 px-4 rounded-lg text-white font-bold text-center text-xs tracking-wider uppercase shadow-sm">
+            ПОСЕТИТЬ САЙТ
+          </a>
+          <a href="https://dilayto.com/z4GL" target="_blank" rel="noopener noreferrer" class="text-xs text-[#3b71ca] hover:text-blue-800 hover:underline transition-colors font-medium mt-0.5">
+            Смотреть анкеты
+          </a>
+        </div>
+      </div>
+
+      <!-- Row 2: Lovesta.chat -->
+      <div class="group relative flex flex-col lg:grid lg:grid-cols-12 items-center px-4 py-6 sm:px-6 lg:py-7 border-b border-slate-200 hover:bg-slate-50/70 transition-colors">
+        
+        <!-- Column 1: Site Brand & Logo -->
+        <div class="w-full lg:w-auto lg:col-span-3 flex items-center justify-start sm:justify-center mb-4 lg:mb-0 gap-3">
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-violet-600 to-indigo-400 flex items-center justify-center text-white shadow-md flex-shrink-0 group-hover:scale-105 transition-transform">
+            <!-- Intersecting circles / connection icon -->
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+            </svg>
+          </div>
+          <div>
+            <a href="https://dilayto.com/Rxgg" target="_blank" rel="noopener noreferrer" class="brand-title text-2xl font-bold text-[#554694] hover:text-[#372b6b] transition-colors">
+              Lovesta.chat
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Description -->
+        <div class="w-full lg:col-span-3 text-slate-700 text-sm leading-relaxed mb-4 lg:mb-0 lg:px-4">
+          <span class="font-bold text-slate-900">Современный сервис</span> для онлайн знакомств. Поиск пары рядом и удобный чат с реальными людьми.
+        </div>
+
+        <!-- Column 3: User Votes Count -->
+        <div class="w-full lg:col-span-2 flex lg:flex-col justify-between items-center lg:justify-center text-slate-800 mb-3 lg:mb-0 lg:text-center border-t lg:border-t-0 pt-3 lg:pt-0 border-slate-100">
+          <span class="text-xs text-slate-400 font-medium lg:hidden">Голоса:</span>
+          <div>
+            <div class="text-xl sm:text-2xl font-bold tracking-tight text-slate-800">51 230</div>
+            <div class="text-xs text-slate-400 font-medium">оценок</div>
+          </div>
+        </div>
+
+        <!-- Column 4: Our Rating Score -->
+        <div class="w-full lg:col-span-2 flex lg:flex-col justify-between items-center lg:justify-center mb-4 lg:mb-0 lg:text-center border-t lg:border-t-0 pt-2 lg:pt-0 border-slate-100">
+          <span class="text-xs text-slate-400 font-medium lg:hidden">Наша оценка:</span>
+          <div>
+            <div class="text-3xl sm:text-4xl font-extrabold score-accent leading-none mb-1">9.6</div>
+            <a href="https://dilayto.com/Rxgg" target="_blank" rel="noopener noreferrer" class="text-xs text-[#3b71ca] hover:text-blue-800 hover:underline transition-colors font-medium">
+              Читать обзор
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 5: Action Button & Secondary Link -->
+        <div class="w-full lg:col-span-2 flex flex-col items-center justify-center gap-1.5 mt-2 lg:mt-0">
+          <a href="https://dilayto.com/Rxgg" target="_blank" rel="noopener noreferrer" class="btn-orange w-full sm:w-48 lg:w-full py-2.5 px-4 rounded-lg text-white font-bold text-center text-xs tracking-wider uppercase shadow-sm">
+            ПОСЕТИТЬ САЙТ
+          </a>
+          <a href="https://dilayto.com/Rxgg" target="_blank" rel="noopener noreferrer" class="text-xs text-[#3b71ca] hover:text-blue-800 hover:underline transition-colors font-medium mt-0.5">
+            Смотреть анкеты
+          </a>
+        </div>
+      </div>
+
+      <!-- Row 3: Telegram Bot Lovesta -->
+      <div class="group relative flex flex-col lg:grid lg:grid-cols-12 items-center px-4 py-6 sm:px-6 lg:py-7 hover:bg-slate-50/70 transition-colors">
+        
+        <!-- Column 1: Site Brand & Logo -->
+        <div class="w-full lg:w-auto lg:col-span-3 flex items-center justify-start sm:justify-center mb-4 lg:mb-0 gap-3">
+          <div class="w-12 h-12 rounded-2xl bg-[#229ED9] flex items-center justify-center text-white shadow-md flex-shrink-0 group-hover:scale-105 transition-transform">
+            <!-- Telegram Plane Icon -->
+            <svg class="w-7 h-7 fill-white" viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/>
+            </svg>
+          </div>
+          <div>
+            <a href="https://t.me/lovestachatbot?start=EeQ0" target="_blank" rel="noopener noreferrer" class="brand-title text-xl font-bold text-[#1f6396] hover:text-[#174669] transition-colors flex items-center gap-1.5">
+              Lovesta Bot
+            </a>
+            <span class="inline-flex items-center text-[10px] uppercase font-bold text-[#0284c7] bg-sky-50 px-2 py-0.5 rounded border border-sky-200">
+              В Telegram
+            </span>
+          </div>
+        </div>
+
+        <!-- Column 2: Description -->
+        <div class="w-full lg:col-span-3 text-slate-700 text-sm leading-relaxed mb-4 lg:mb-0 lg:px-4">
+          <span class="font-bold text-slate-900">Удобный бот для знакомств</span> в Telegram. Мгновенные уведомления и поиск анкет прямо в мессенджере.
+        </div>
+
+        <!-- Column 3: User Votes Count -->
+        <div class="w-full lg:col-span-2 flex lg:flex-col justify-between items-center lg:justify-center text-slate-800 mb-3 lg:mb-0 lg:text-center border-t lg:border-t-0 pt-3 lg:pt-0 border-slate-100">
+          <span class="text-xs text-slate-400 font-medium lg:hidden">Голоса:</span>
+          <div>
+            <div class="text-xl sm:text-2xl font-bold tracking-tight text-slate-800">44 890</div>
+            <div class="text-xs text-slate-400 font-medium">оценок</div>
+          </div>
+        </div>
+
+        <!-- Column 4: Our Rating Score -->
+        <div class="w-full lg:col-span-2 flex lg:flex-col justify-between items-center lg:justify-center mb-4 lg:mb-0 lg:text-center border-t lg:border-t-0 pt-2 lg:pt-0 border-slate-100">
+          <span class="text-xs text-slate-400 font-medium lg:hidden">Наша оценка:</span>
+          <div>
+            <div class="text-3xl sm:text-4xl font-extrabold score-accent leading-none mb-1">9.5</div>
+            <a href="https://t.me/lovestachatbot?start=EeQ0" target="_blank" rel="noopener noreferrer" class="text-xs text-[#3b71ca] hover:text-blue-800 hover:underline transition-colors font-medium">
+              Читать обзор
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 5: Action Button & Secondary Link -->
+        <div class="w-full lg:col-span-2 flex flex-col items-center justify-center gap-1.5 mt-2 lg:mt-0">
+          <a href="https://t.me/lovestachatbot?start=EeQ0" target="_blank" rel="noopener noreferrer" class="btn-orange w-full sm:w-48 lg:w-full py-2.5 px-4 rounded-lg text-white font-bold text-center text-xs tracking-wider uppercase shadow-sm">
+            ОТКРЫТЬ БОТА
+          </a>
+          <a href="https://t.me/lovestachatbot?start=EeQ0" target="_blank" rel="noopener noreferrer" class="text-xs text-[#3b71ca] hover:text-blue-800 hover:underline transition-colors font-medium mt-0.5">
+            Смотреть анкеты
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="mt-6 text-center text-xs text-slate-400 leading-normal">
+      Рейтинг сформирован на основе более 150 000 отзывов пользователей и регулярного тестирования сервисов.
+    </div>
+  </div>
+
+</body>
+</html>
