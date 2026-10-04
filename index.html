@@ -170,25 +170,29 @@ input[type="email"]:focus { border-color: var(--ink); outline: none; box-shadow:
 .ok h3 { margin: 0 0 8px; font-size: 20px; color: var(--good); }
 .ok p { margin: 0 0 8px; color: var(--muted); }
 
-/* COVER */
-.cover-wrap { display: flex; flex-direction: column; align-items: center; gap: 14px; padding: 10px 0; }
-.book {
-  position: relative; width: min(100%, 320px); aspect-ratio: 3 / 4.15; color: #fff;
-  background: linear-gradient(140deg, #22386A 0%, #14203B 100%);
-  border-radius: 6px 14px 14px 6px; padding: 30px 26px 0 40px;
-  display: flex; flex-direction: column; overflow: hidden; transform: rotate(-2deg);
-  box-shadow: 0 30px 50px -26px rgba(10,20,40,.75), 0 0 0 1px rgba(255,255,255,.12);
+/* COVER IMAGE STYLING */
+.cover-wrap { display: flex; flex-direction: column; align-items: center; gap: 16px; padding: 10px 0; }
+.cover-shadow-box {
+  width: min(100%, 340px);
+  position: relative;
+  display: flex;
+  justify-content: center;
 }
-.book::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 18px;
-  background: linear-gradient(90deg, rgba(0,0,0,.4), rgba(255,255,255,.1) 65%, transparent); }
-.b-top { font-size: 13px; color: #B9C6DE; margin: 0; }
-.b-title { font-family: var(--font-head); font-weight: 700; font-size: clamp(25px, 3.4vw, 33px); line-height: 1.12; margin: 12px 0 22px; letter-spacing: -0.01em; }
-.b-list { list-style: none; padding: 0; margin: 0 0 auto; display: grid; gap: 10px; font-size: 15px; }
-.b-list li { display: flex; align-items: center; gap: 10px; }
-.b-list li::before { content: "✓"; flex: none; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center;
-  border: 2px solid var(--cta-orange); border-radius: 5px; color: var(--cta-orange); font-size: 12px; font-weight: 700; }
-.b-band { margin: 18px -26px 0 -40px; padding: 16px 26px 18px 40px; background: var(--cta-orange); color: var(--cta-orange-text); font-weight: 600; font-size: 15px; line-height: 1.3; }
-.cover-cap { font-size: 13.5px; color: var(--muted); margin: 0; text-align: center; }
+.cover-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1.414; /* Стандартные пропорции книжного PDF */
+  object-fit: cover;
+  border-radius: 10px;
+  transform: rotate(-1.5deg);
+  box-shadow: 0 24px 44px -14px rgba(15, 24, 42, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.15);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.cover-img:hover {
+  transform: rotate(0deg) translateY(-4px);
+  box-shadow: 0 28px 50px -12px rgba(15, 24, 42, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.25);
+}
+.cover-cap { font-size: 14px; color: var(--muted); margin: 0; text-align: center; }
 
 /* SECTIONS */
 section.block { padding: 64px 0; border-top: 1px solid var(--line); }
@@ -245,7 +249,7 @@ footer p { margin: 0 0 6px; max-width: 60em; }
 @media (max-width: 860px) {
   .hero { padding: 28px 0 44px; }
   .hero-grid { grid-template-columns: 1fr; gap: 36px; }
-  .book { transform: none; }
+  .cover-img { transform: none; }
   .channel-grid { grid-template-columns: 1fr 1fr; }
   .inside, .ba { grid-template-columns: 1fr; }
   .final { grid-template-columns: 1fr; padding: 24px; gap: 24px; }
@@ -323,19 +327,12 @@ footer p { margin: 0 0 6px; max-width: 60em; }
       <p class="micro">🛡️ Без спама. Мы уважаем приватность и не передаём адреса третьим лицам.</p>
     </div>
 
+    <!-- Обновленная обложка PDF -->
     <div class="cover-wrap">
-      <div class="book" role="img" aria-label="Обложка чек-листа «Анкета, которая цепляет»">
-        <p class="b-top">Чек-лист для мужчин 30+</p>
-        <div class="b-title">Анкета, которая цепляет</div>
-        <ul class="b-list">
-          <li>Фото, которые привлекают внимание</li>
-          <li>Текст «О себе» по проверенной формуле</li>
-          <li>10 стоп-фраз, убивающих диалог</li>
-          <li>Чек-лист готовности перед запуском</li>
-        </ul>
-        <div class="b-band">15 пунктов + 10 примеров «до/после»</div>
+      <div class="cover-shadow-box">
+        <img src="cover.jpg" alt="Обложка чек-листа: Анкета, которая цепляет" class="cover-img">
       </div>
-      <p class="cover-cap">PDF, 10–12 страниц. Читается за 10 минут.</p>
+      <p class="cover-cap">PDF, 12 страниц. Читается за 10 минут.</p>
     </div>
   </div>
 </header>
