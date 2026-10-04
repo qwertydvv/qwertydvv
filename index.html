@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Анкета, которая цепляет — чек-лист для мужчин 30+</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&family=Unbounded:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* Тёплая, статусная база */
+  --bg: #F5F4F0;
+  --surface: #FFFFFF;
+  --ink: #1B2330;
+  --muted: #5C6779;
+  --line: #DFDFD8;
+  --pen: #D44235;
+  --good: #1B7A55;
+  --good-bg: #EAF4EE;
+
+  /* Энергичный янтарно-оранжевый акцент */
+  --mark: #FFE2CC;              /* Пастельный маркер для текста */
+  --cta-orange: #F56B2A;         /* Основной оранжевый CTA */
+  --cta-orange-hover: #E05514;   /* При наведении */
+  --cta-orange-text: #FFFFFF;    /* Контрастный белый текст */
+
+  /* Фирменные цвета иконок соцсетей */
+  --c-tg: #2AABEE;
+  --c-max: #7339E6;
+  --c-vk: #0077FF;
+
+  --font-body: "Onest", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-head: "Unbounded", "Onest", system-ui, Arial, sans-serif;
+
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #121620;
+    --surface: #1B212D;
+    --ink: #ECEFF5;
+    --muted: #9AA6BA;
+    --line: #2D3748;
+    --pen: #FF6E61;
+    --good: #47C894;
+    --good-bg: #13271F;
+    --mark: #542B12;
+    --cta-orange: #F56B2A;
+    --cta-orange-hover: #FF7B3D;
+    --cta-orange-text: #FFFFFF;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #121620;
+  --surface: #1B212D;
+  --ink: #ECEFF5;
+  --muted: #9AA6BA;
+  --line: #2D3748;
+  --pen: #FF6E61;
+  --good: #47C894;
+  --good-bg: #13271F;
+  --mark: #542B12;
+  --cta-orange: #F56B2A;
+  --cta-orange-hover: #FF7B3D;
+  --cta-orange-text: #FFFFFF;
+}
+
+html { scroll-padding-top: env(safe-area-inset-top, 0px); scroll-behavior: smooth; }
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: var(--font-body); font-size: 17px; line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 22px; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--cta-orange); outline-offset: 3px; }
+
+/* HERO */
+.hero { padding: 48px 0 64px; }
+.hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center; }
+.tag-badge {
+  display: inline-flex; align-items: center; gap: 8px; font-weight: 500; font-size: 14px;
+  background: color-mix(in srgb, var(--cta-orange) 14%, transparent); color: var(--ink);
+  padding: 6px 14px; border-radius: 20px; margin: 0 0 16px; border: 1px solid color-mix(in srgb, var(--cta-orange) 30%, transparent);
+}
+h1 {
+  font-family: var(--font-head); font-weight: 700; font-size: clamp(27px, 4.2vw, 44px);
+  line-height: 1.15; letter-spacing: -0.01em; margin: 0 0 20px;
+}
+h1 .hl { background: linear-gradient(transparent 58%, var(--mark) 58%, var(--mark) 92%, transparent 92%); padding: 0 .08em; }
+.lead { font-size: 19px; color: var(--muted); margin: 0 0 26px; max-width: 34em; }
+.lead b { color: var(--ink); font-weight: 600; }
+
+/* CARD & UNIFIED BUTTONS */
+.form-card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 24px; max-width: 490px; box-shadow: 0 8px 24px -10px rgba(0,0,0,0.06); }
+.form-card .card-heading { font-weight: 600; font-size: 16px; margin: 0 0 14px; color: var(--ink); }
+
+.channel-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 8px; }
+.chan-btn {
+  font: inherit; font-size: 15px; font-weight: 600; text-decoration: none; cursor: pointer;
+  display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+  padding: 13px 14px; border-radius: 10px; transition: transform .12s ease, background-color .15s ease, border-color .15s ease;
+}
+.chan-btn:active { transform: translateY(1px); }
+.chan-btn svg { flex: none; }
+
+/* Кнопка Email */
+.btn-c-email {
+  background: var(--cta-orange); color: var(--cta-orange-text); border: 1px solid var(--cta-orange);
+}
+.btn-c-email:hover {
+  background: var(--cta-orange-hover); border-color: var(--cta-orange-hover);
+}
+
+/* Кнопки соцсетей */
+.btn-c-social {
+  background: color-mix(in srgb, var(--surface) 60%, var(--bg));
+  color: var(--ink); border: 1.5px solid var(--line);
+}
+.btn-c-social:hover {
+  background: var(--surface);
+  border-color: color-mix(in srgb, var(--ink) 30%, transparent);
+}
+.icon-tg { color: var(--c-tg); }
+.icon-max { color: var(--c-max); }
+.icon-vk { color: var(--c-vk); }
+
+/* Разворачиваемая форма Email */
+.email-expand-box {
+  display: none; margin-top: 14px; padding-top: 16px; border-top: 1px dashed var(--line);
+  animation: fadeIn .2s ease-out;
+}
+.email-expand-box.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: translateY(0); } }
+
+.email-box-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.email-box-top span { font-size: 14px; font-weight: 600; color: var(--ink); }
+.btn-close-box { background: transparent; border: 0; color: var(--muted); cursor: pointer; font-size: 13px; text-decoration: underline; padding: 0; }
+
+.field { display: flex; flex-direction: column; gap: 10px; }
+input[type="email"] {
+  width: 100%; padding: 14px 16px; font: inherit; font-size: 16px; color: var(--ink);
+  background: var(--bg); border: 1.5px solid var(--line); border-radius: 10px;
+}
+input[type="email"]:focus { border-color: var(--ink); outline: none; box-shadow: 0 0 0 3px color-mix(in srgb, var(--cta-orange) 50%, transparent); }
+
+.btn-submit {
+  font: inherit; font-weight: 600; font-size: 16px; cursor: pointer; border: 0; border-radius: 10px;
+  padding: 15px 20px; background: var(--cta-orange); color: var(--cta-orange-text); width: 100%;
+  transition: transform .12s ease, background-color .15s ease;
+}
+.btn-submit:hover { background: var(--cta-orange-hover); }
+.btn-submit:active { transform: translateY(1px); }
+.btn-submit[disabled] { opacity: .6; cursor: default; }
+
+.consent { display: flex; gap: 10px; align-items: flex-start; font-size: 13px; color: var(--muted); line-height: 1.4; margin-top: 4px; }
+.consent input { margin-top: 2px; width: 17px; height: 17px; flex: none; accent-color: var(--cta-orange); }
+.consent a { color: var(--ink); }
+.err { color: var(--pen); font-size: 13.5px; margin: 2px 0 0; min-height: 1.2em; }
+.micro { font-size: 13.5px; color: var(--muted); margin: 14px 0 0; display: flex; align-items: center; gap: 6px; }
+
+.ok { display: none; }
+.form-card.done .channel-grid, .form-card.done .card-heading, .form-card.done .email-expand-box { display: none; }
+.form-card.done .ok { display: block; }
+.ok h3 { margin: 0 0 8px; font-size: 20px; color: var(--good); }
+.ok p { margin: 0 0 8px; color: var(--muted); }
+
+/* COVER */
+.cover-wrap { display: flex; flex-direction: column; align-items: center; gap: 14px; padding: 10px 0; }
+.book {
+  position: relative; width: min(100%, 320px); aspect-ratio: 3 / 4.15; color: #fff;
+  background: linear-gradient(140deg, #22386A 0%, #14203B 100%);
+  border-radius: 6px 14px 14px 6px; padding: 30px 26px 0 40px;
+  display: flex; flex-direction: column; overflow: hidden; transform: rotate(-2deg);
+  box-shadow: 0 30px 50px -26px rgba(10,20,40,.75), 0 0 0 1px rgba(255,255,255,.12);
+}
+.book::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 18px;
+  background: linear-gradient(90deg, rgba(0,0,0,.4), rgba(255,255,255,.1) 65%, transparent); }
+.b-top { font-size: 13px; color: #B9C6DE; margin: 0; }
+.b-title { font-family: var(--font-head); font-weight: 700; font-size: clamp(25px, 3.4vw, 33px); line-height: 1.12; margin: 12px 0 22px; letter-spacing: -0.01em; }
+.b-list { list-style: none; padding: 0; margin: 0 0 auto; display: grid; gap: 10px; font-size: 15px; }
+.b-list li { display: flex; align-items: center; gap: 10px; }
+.b-list li::before { content: "✓"; flex: none; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center;
+  border: 2px solid var(--cta-orange); border-radius: 5px; color: var(--cta-orange); font-size: 12px; font-weight: 700; }
+.b-band { margin: 18px -26px 0 -40px; padding: 16px 26px 18px 40px; background: var(--cta-orange); color: var(--cta-orange-text); font-weight: 600; font-size: 15px; line-height: 1.3; }
+.cover-cap { font-size: 13.5px; color: var(--muted); margin: 0; text-align: center; }
+
+/* SECTIONS */
+section.block { padding: 64px 0; border-top: 1px solid var(--line); }
+h2 { font-family: var(--font-head); font-weight: 600; font-size: clamp(22px, 3vw, 30px); line-height: 1.22; margin: 0 0 12px; letter-spacing: -0.005em; }
+.sub { color: var(--muted); margin: 0 0 32px; max-width: 38em; }
+.inside { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; list-style: none; padding: 0; margin: 0; }
+.inside li { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px; }
+.inside strong { display: block; font-weight: 600; margin-bottom: 4px; }
+.inside span { color: var(--muted); font-size: 15.5px; }
+
+/* BEFORE / AFTER */
+.ba { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.ba .col { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 22px; display: flex; flex-direction: column; }
+.ba h3 { margin: 0 0 14px; font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+.ba .bad h3 { color: var(--pen); }
+.ba .good h3 { color: var(--good); }
+
+.p-head { display: flex; gap: 16px; align-items: center; margin-bottom: 14px; }
+.photo-wrap { position: relative; flex: none; width: 78px; height: 96px; }
+.photo-wrap.bad-photo::after { content: ""; position: absolute; inset: -4px; border: 2px dashed var(--pen); border-radius: 12px; pointer-events: none; }
+.photo-wrap.good-photo::after { content: ""; position: absolute; inset: -4px; border: 2px solid var(--good); border-radius: 12px; pointer-events: none; }
+
+/* Реальные фото профиля */
+.profile-avatar {
+  width: 100%; height: 100%; object-fit: cover; border-radius: 8px; display: block; background: #C5CBD5;
+}
+
+.p-name { font-weight: 600; font-size: 17px; line-height: 1.2; }
+.p-meta { color: var(--muted); font-size: 13.5px; }
+.p-text { margin: 0 0 auto; font-size: 15.5px; line-height: 1.5; }
+.p-text .stamp { background: color-mix(in srgb, var(--pen) 15%, transparent); border-bottom: 2px solid var(--pen); border-radius: 2px; }
+.p-text .highlight-good { background: color-mix(in srgb, var(--good) 15%, transparent); border-bottom: 2px solid var(--good); border-radius: 2px; }
+.pen-note { margin: 16px 0 0; padding: 10px 12px; border-radius: 8px; background: color-mix(in srgb, var(--pen) 8%, transparent); color: var(--pen); font-size: 13.5px; line-height: 1.4; }
+.good-note { margin: 16px 0 0; padding: 10px 12px; border-radius: 8px; background: var(--good-bg); color: var(--good); font-size: 13.5px; line-height: 1.4; }
+.ba-foot { margin: 18px 0 0; font-size: 14px; color: var(--muted); }
+
+/* FAQ */
+.faq { max-width: 46em; display: grid; gap: 10px; }
+.faq details { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
+.faq summary { cursor: pointer; padding: 16px 20px; font-weight: 600; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; font-size: 22px; line-height: 1; color: var(--muted); flex: none; }
+.faq details[open] summary::after { content: "−"; }
+.faq details p { margin: 0; padding: 0 20px 18px; color: var(--muted); font-size: 16px; }
+
+/* FINAL */
+.final { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 36px; display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: center; }
+.final h2 { margin-bottom: 10px; }
+.final .form-card { border: 0; padding: 0; background: transparent; max-width: none; box-shadow: none; }
+
+footer { padding: 28px 0 44px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+footer p { margin: 0 0 6px; max-width: 60em; }
+
+@media (max-width: 860px) {
+  .hero { padding: 28px 0 44px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 36px; }
+  .book { transform: none; }
+  .channel-grid { grid-template-columns: 1fr 1fr; }
+  .inside, .ba { grid-template-columns: 1fr; }
+  .final { grid-template-columns: 1fr; padding: 24px; gap: 24px; }
+  section.block { padding: 44px 0; }
+}
+@media (max-width: 440px) {
+  .channel-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="tag-badge">
+        <span>🔥</span> Анализ 500+ мужских анкет и опросы девушек 25–40 лет
+      </div>
+      <h1>Совпадений нет, а на сообщения не отвечают? Проверьте <span class="hl">свою анкету</span> за 15 минут</h1>
+      <p class="lead">Ваш профиль оценивают за 3 секунды. Получите <b>15 пунктов экспресс-проверки</b>, готовую формулу текста «О себе» и <b>10 реальных примеров «до/после»</b>, чтобы повысить интерес девушек уже сегодня.</p>
+
+      <div class="form-card" id="form1">
+        <div class="card-heading">Куда прислать чек-лист?</div>
+        
+        <div class="channel-grid">
+          <!-- Оранжевый Email -->
+          <button type="button" class="chan-btn btn-c-email js-trigger-email" aria-expanded="false">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            Email
+          </button>
+
+          <!-- Telegram -->
+          <a href="#" target="_blank" class="chan-btn btn-c-social" rel="noopener">
+            <svg class="icon-tg" width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+            Telegram
+          </a>
+
+          <!-- MAX -->
+          <a href="#" target="_blank" class="chan-btn btn-c-social" rel="noopener">
+            <svg class="icon-max" width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 2.85 1.2 5.42 3.12 7.24L4 22l3.02-1.06C8.5 21.6 10.2 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm1 14h-2v-2h2v2zm0-4h-2V7h2v5z"/></svg>
+            MAX
+          </a>
+
+          <!-- VK -->
+          <a href="#" target="_blank" class="chan-btn btn-c-social" rel="noopener">
+            <svg class="icon-vk" width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M15.07 2H8.93C4.33 2 2 4.33 2 8.93v6.14C2 19.67 4.33 22 8.93 22h6.14c4.6 0 6.93-2.33 6.93-6.93V8.93C22 4.33 19.67 2 15.07 2zm3.38 13.91h-1.6c-.6 0-.78-.48-1.86-1.56-.94-.92-1.36-1.04-1.59-1.04-.33 0-.42.09-.42.54v1.44c0 .38-.12.62-1.12.62-1.66 0-3.5-1.01-4.79-2.88-1.95-2.77-2.49-4.86-2.49-5.29 0-.24.09-.46.54-.46h1.6c.4 0 .56.19.72.62.78 2.27 2.08 4.25 2.62 4.25.2 0 .3-.09.3-.6V9.43c-.06-1.1-.64-1.2-.64-1.59 0-.19.16-.38.41-.38h2.52c.34 0 .46.18.46.58v3.13c0 .34.15.46.25.46.2 0 .38-.12.76-.5 1.18-1.32 2.02-3.32 2.02-3.32.11-.24.31-.46.72-.46h1.6c.48 0 .59.25.48.59-.2 0.94-2.18 3.73-2.28 3.88-.22.34-.3.49 0 .89.22.3 0.98 0.96 1.48 1.54.92 1.07 1.63 1.96 1.82 2.58.07.25-.13.38-.48.38z"/></svg>
+            VK
+          </a>
+        </div>
+
+        <!-- Разворачиваемая форма Email -->
+        <div class="email-expand-box">
+          <div class="email-box-top">
+            <span>Получить PDF на почту:</span>
+            <button type="button" class="btn-close-box js-close-email">Скрыть</button>
+          </div>
+          <form class="lead-form" novalidate>
+            <div class="field">
+              <input type="email" name="email" placeholder="Введите ваш e-mail" autocomplete="email" inputmode="email" required>
+              <button class="btn-submit" type="submit">Скачать чек-лист бесплатно (PDF)</button>
+              <label class="consent">
+                <input type="checkbox" name="consent" checked required>
+                <span>Согласен на <a href="#" target="_blank" rel="noopener">обработку данных</a> и получение материалов. Отписка в 1 клик.</span>
+              </label>
+              <p class="err" role="alert" aria-live="polite"></p>
+            </div>
+          </form>
+        </div>
+
+        <div class="ok" role="status" aria-live="polite">
+          <h3>Готово, PDF уже отправляется</h3>
+          <p>Файл поступит на почту в течение 2–3 минут. Если не увидели во «Входящих», проверьте папку «Спам» или «Промоакции».</p>
+        </div>
+      </div>
+      <p class="micro">🛡️ Без спама. Мы уважаем приватность и не передаём адреса третьим лицам.</p>
+    </div>
+
+    <div class="cover-wrap">
+      <div class="book" role="img" aria-label="Обложка чек-листа «Анкета, которая цепляет»">
+        <p class="b-top">Чек-лист для мужчин 30+</p>
+        <div class="b-title">Анкета, которая цепляет</div>
+        <ul class="b-list">
+          <li>Фото, которые привлекают внимание</li>
+          <li>Текст «О себе» по проверенной формуле</li>
+          <li>10 стоп-фраз, убивающих диалог</li>
+          <li>Чек-лист готовности перед запуском</li>
+        </ul>
+        <div class="b-band">15 пунктов + 10 примеров «до/после»</div>
+      </div>
+      <p class="cover-cap">PDF, 10–12 страниц. Читается за 10 минут.</p>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="block">
+    <div class="wrap">
+      <h2>Что внутри чек-листа</h2>
+      <p class="sub">Никакой абстрактной психологии: только конкретные формулировки, разбор ракурсов и пошаговый алгоритм.</p>
+      <ul class="inside">
+        <li><strong>Фото: что привлекает, а что мгновенно отталкивает</strong><span>Какое фото поставить главным, чтобы свайпали вправо, и почему селфи в лифте ломают всё.</span></li>
+        <li><strong>Формула текста «О себе» из 4 частей</strong><span>Кто вы, чем горите, кого ищете и простой крючок, с которого легко начать диалог.</span></li>
+        <li><strong>Список стоп-фраз, которые нужно удалить</strong><span>Штампы и пассивная агрессия, из-за которых анкету закрывают не читая.</span></li>
+        <li><strong>10 наглядных примеров «до/после»</strong><span>Готовые шаблоны для серьёзных отношений, свиданий и знакомств в возрасте 35–45+.</span></li>
+        <li><strong>Финальный аудит по 15 пунктам</strong><span>Контрольный лист: проверьте анкету по пунктам перед тем, как сохранить.</span></li>
+        <li><strong>Где знакомиться после 30 лет</strong><span>Подборка площадок с взрослой и адекватной аудиторией для практики.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <h2>Как преображается профиль: разбор на примере</h2>
+      <p class="sub">Один и тот же человек, но во втором варианте профиль вызывает желание ответить и завязать разговор.</p>
+      <div class="ba">
+        
+        <!-- БЛОК ДО (do.jpg) -->
+        <div class="col bad">
+          <h3>Было (пролистывают мимо)</h3>
+          <div class="p-head">
+            <div class="photo-wrap bad-photo">
+              <img src="do.jpg" alt="Фото в анкете до" class="profile-avatar" loading="lazy">
+            </div>
+            <div>
+              <div class="p-name">Андрей, 36</div>
+              <div class="p-meta">Москва</div>
+            </div>
+          </div>
+          <p class="p-text"><span class="stamp">Ищу ту самую.</span> Не люблю писать, <span class="stamp">давай сразу в WhatsApp.</span> <span class="stamp">Без игр и драмы.</span></p>
+          <div class="pen-note">⚠️ <b>Ошибки:</b> Закрытое лицо, требование мессенджера до знакомства и скрытая претензия («без драмы») отталкивают 9 из 10 девушек.</div>
+        </div>
+
+        <!-- БЛОК ПОСЛЕ (posle.jpg) -->
+        <div class="col good">
+          <h3>Стало (пишут сами или легко идут на контакт)</h3>
+          <div class="p-head">
+            <div class="photo-wrap good-photo">
+              <img src="posle.jpg" alt="Фото в анкете после" class="profile-avatar" loading="lazy">
+            </div>
+            <div>
+              <div class="p-name">Андрей, 36</div>
+              <div class="p-meta">Москва • Открытый взгляд и хобби в кадре</div>
+            </div>
+          </div>
+          <p class="p-text">Инженер, проектирую мосты. По выходным кручу педали за город и тестирую местный фильтр-кофе. <span class="highlight-good">Ищу девушку со схожим чувством юмора, с которой приятно и помолчать, и поспорить о кино.</span> <span class="highlight-good">Какой маршрут на уикенд посоветуешь?</span></p>
+          <div class="good-note">✅ <b>Почему это работает:</b> Есть статус, понятный стиль жизни, ценности и конкретный открытый вопрос, с которого легко начать переписку.</div>
+        </div>
+
+      </div>
+      <p class="ba-foot">В чек-листе разобрано 10 таких шаблонов под разные цели знакомства.</p>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <h2>Частые вопросы</h2>
+      <p class="sub">Коротко и честно о формате материала и конфиденциальности.</p>
+      <div class="faq">
+        <details>
+          <summary>Это правда бесплатно?</summary>
+          <p>Да, абсолютно. Мы не просим данные банковских карт или скрытых подписок. Чек-лист приходит в виде PDF-файла сразу после ввода e-mail или через бота.</p>
+        </details>
+        <details>
+          <summary>Что придёт вместе с чек-листом?</summary>
+          <p>Вместе с гайдом вы получите подборку проверенных сайтов знакомств для аудитории 30+. Часть ссылок в подборке партнёрские: если вы зарегистрируетесь, сервис может начислить нам небольшую комиссию. Для вас регистрация остаётся абсолютно бесплатной.</p>
+        </details>
+        <details>
+          <summary>Не завалите ли вы спамом?</summary>
+          <p>Нет. Мы отправляем только короткую серию полезных материалов с разбором мужских ошибок в переписке. Отписаться от рассылки в любом канале можно в один клик.</p>
+        </details>
+        <details>
+          <summary>Подойдёт ли чек-лист, если мне 40–50 лет?</summary>
+          <p>Да. В руководстве есть отдельный блок по позиционированию зрелых мужчин: как показать надёжность и статус без снобизма и устаревших шаблонов.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="final">
+        <div>
+          <h2>Перестаньте сливать внимание впустую</h2>
+          <p class="sub" style="margin:0">Исправьте главные ошибки сегодня и начните получать осмысленные диалоги.</p>
+        </div>
+        <div class="form-card" id="form2">
+          <div class="card-heading">Выберите удобный способ получения:</div>
+
+          <div class="channel-grid">
+            <button type="button" class="chan-btn btn-c-email js-trigger-email" aria-expanded="false">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              Email
+            </button>
+            <a href="#" target="_blank" class="chan-btn btn-c-social" rel="noopener">
+              <svg class="icon-tg" width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+              Telegram
+            </a>
+            <a href="#" target="_blank" class="chan-btn btn-c-social" rel="noopener">
+              <svg class="icon-max" width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 2.85 1.2 5.42 3.12 7.24L4 22l3.02-1.06C8.5 21.6 10.2 22 12 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm1 14h-2v-2h2v2zm0-4h-2V7h2v5z"/></svg>
+              MAX
+            </a>
+            <a href="#" target="_blank" class="chan-btn btn-c-social" rel="noopener">
+              <svg class="icon-vk" width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M15.07 2H8.93C4.33 2 2 4.33 2 8.93v6.14C2 19.67 4.33 22 8.93 22h6.14c4.6 0 6.93-2.33 6.93-6.93V8.93C22 4.33 19.67 2 15.07 2zm3.38 13.91h-1.6c-.6 0-.78-.48-1.86-1.56-.94-.92-1.36-1.04-1.59-1.04-.33 0-.42.09-.42.54v1.44c0 .38-.12.62-1.12.62-1.66 0-3.5-1.01-4.79-2.88-1.95-2.77-2.49-4.86-2.49-5.29 0-.24.09-.46.54-.46h1.6c.4 0 .56.19.72.62.78 2.27 2.08 4.25 2.62 4.25.2 0 .3-.09.3-.6V9.43c-.06-1.1-.64-1.2-.64-1.59 0-.19.16-.38.41-.38h2.52c.34 0 .46.18.46.58v3.13c0 .34.15.46.25.46.2 0 .38-.12.76-.5 1.18-1.32 2.02-3.32 2.02-3.32.11-.24.31-.46.72-.46h1.6c.48 0 .59.25.48.59-.2 0.94-2.18 3.73-2.28 3.88-.22.34-.3.49 0 .89.22.3 0.98 0.96 1.48 1.54.92 1.07 1.63 1.96 1.82 2.58.07.25-.13.38-.48.38z"/></svg>
+              VK
+            </a>
+          </div>
+
+          <!-- Разворачиваемая форма Email -->
+          <div class="email-expand-box">
+            <div class="email-box-top">
+              <span>Получить PDF на почту:</span>
+              <button type="button" class="btn-close-box js-close-email">Скрыть</button>
+            </div>
+            <form class="lead-form" novalidate>
+              <div class="field">
+                <input type="email" name="email" placeholder="name@example.com" autocomplete="email" inputmode="email" required>
+                <button class="btn-submit" type="submit">Забрать чек-лист (PDF)</button>
+                <label class="consent">
+                  <input type="checkbox" name="consent" checked required>
+                  <span>Согласен на <a href="#" target="_blank" rel="noopener">обработку персональных данных</a>.</span>
+                </label>
+                <p class="err" role="alert" aria-live="polite"></p>
+              </div>
+            </form>
+          </div>
+
+          <div class="ok" role="status" aria-live="polite">
+            <h3>Готово, файл отправлен!</h3>
+            <p>Проверьте почту через 2 минуты. Если письма нет, загляните в «Спам».</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Материалы предназначены исключительно для совершеннолетних пользователей (18+).</p>
+    <p>Мы не передаём личные данные сторонним сервисам. Политика конфиденциальности и условия использования.</p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+  document.querySelectorAll('.form-card').forEach(function(card) {
+    var triggerBtn = card.querySelector('.js-trigger-email');
+    var closeBtn = card.querySelector('.js-close-email');
+    var expandBox = card.querySelector('.email-expand-box');
+    var emailInput = expandBox ? expandBox.querySelector('input[type="email"]') : null;
+
+    if (triggerBtn && expandBox) {
+      triggerBtn.addEventListener('click', function() {
+        var isOpen = expandBox.classList.contains('active');
+        if (!isOpen) {
+          expandBox.classList.add('active');
+          triggerBtn.setAttribute('aria-expanded', 'true');
+          if (emailInput) emailInput.focus();
+        } else {
+          expandBox.classList.remove('active');
+          triggerBtn.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
+    if (closeBtn && expandBox) {
+      closeBtn.addEventListener('click', function() {
+        expandBox.classList.remove('active');
+        if (triggerBtn) triggerBtn.setAttribute('aria-expanded', 'false');
+      });
+    }
+  });
+
+  document.querySelectorAll('.lead-form').forEach(function (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var card = form.closest('.form-card');
+      var email = form.elements['email'].value.trim();
+      var consent = form.elements['consent'].checked;
+      var err = form.querySelector('.err');
+      var btn = form.querySelector('.btn-submit');
+      err.textContent = '';
+
+      if (!EMAIL_RE.test(email)) {
+        err.textContent = 'Проверьте e-mail: похоже, допущена опечатка.';
+        form.elements['email'].focus();
+        return;
+      }
+      if (!consent) {
+        err.textContent = 'Подтвердите согласие для получения файла.';
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = 'Отправка...';
+
+      setTimeout(function () {
+        card.classList.add('done');
+      }, 500);
+    });
+  });
+})();
+</script>
+</body>
+</html>
